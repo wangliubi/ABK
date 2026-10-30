@@ -4490,7 +4490,7 @@ jobs:
               path: path.read_text().splitlines()
               for path in config_files
           }
-          lines = os.environ["CUSTOM_KERNEL_OPTIONS"].replace("\r", "").splitlines()
+          lines = os.environ["CUSTOM_KERNEL_OPTIONS"].replace("\r", "").replace(" ", "\n").splitlines()
 
           parsed = []
           disabled_re = re.compile(r"^#\s*(CONFIG_[A-Za-z0-9_]+)\s+is\s+not\s+set$", re.I)
